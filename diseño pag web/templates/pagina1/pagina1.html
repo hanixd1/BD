@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Salud Rural</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos1.css') }}">
+
+</head>
+<body>
+  <header class="top-header">
+    <div class="header-content">
+      <img src="D:\proyecto diseño de software\diseño pag web\static\andesalud.png" alt="Logo" class="logo">
+      <h1>SISTEMA DE GESTIÓN DE SALUD RURAL</h1>
+    </div>
+  </header>
+
+  <!-- NUEVA barra de navegación -->  
+  <nav class="top-nav">
+    <button>AGENDAR CITA</button>
+    <button>INGRESAR DESCRIPCIÓN DE LA CONDICIÓN MÉDICA</button>
+    <button>SELECCIONAR MÉDICO</button>
+  </nav>
+
+  <div class="main-container">
+    <section class="form-wrapper">
+      <h2>AGENDAR CITA</h2>
+      <form class="appointment-form">
+        <div class="form-left">
+          <label>PACIENTE:<input type="text"></label>
+          <label>CÓDIGO:<input type="text"></label>
+          <label>TELÉFONO:<input type="text" value="+51"></label>
+          <label>DIRECCIÓN:<input type="text" value="S/N"></label>
+          <label>TUTOR/APODERADO:<input type="text" value="Ninguno"></label>
+          <label>MOTIVO DE LA CITA:<textarea></textarea></label>
+        </div>
+        <div class="form-right">
+          <label>SEXO:
+            <select>
+              <option>Masculino</option>
+              <option>Femenino</option>
+            </select>
+          </label>
+          <label>EDAD:<input type="number"></label>
+          <label>MODALIDAD:
+            <div class="radio-group">
+              <label><input type="radio" name="modalidad"> Presencial</label>
+              <label><input type="radio" name="modalidad"> Remota</label>
+              <label><input type="radio" name="modalidad"> Visita</label>
+            </div>
+          </label>
+          <label>TIPO DE SEGURO:
+            <select>
+              <option>SIS</option>
+              <option>ESSALUD</option>
+              <option>PRIVADO</option>
+            </select>
+          </label>
+          <label>FECHA:
+            <input type="date" />
+          </label>
+        </div>
+      </form>
+
+      <div class="form-footer">
+        <input type="checkbox" id="confirmar" />
+        <label for="confirmar">He revisado y confirmo los datos de mi cita.</label>
+        <div class="buttons">
+          <button class="continue">CONTINUAR</button>
+          <button class="clean">CLEAN</button>
+          <button class="cancel">CANCELAR</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

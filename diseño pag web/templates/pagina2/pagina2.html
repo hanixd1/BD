@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descripción Médica</title>
+ <link rel="stylesheet" href="D:\proyecto diseño de software\diseño pag web\static\estilos2.css">
+</head>
+<body>
+  <header class="top-header">
+    <div class="header-content">
+      <img src="D:\proyecto diseño de software\diseño pag web\static\andesalud.png" alt="Logo" class="logo">
+      <h1>SISTEMA DE GESTIÓN DE SALUD RURAL</h1>
+    </div>
+  </header>
+
+  <nav class="top-nav">
+    <button>AGENDAR CITA</button>
+    <button>INGRESAR DESCRIPCIÓN DE LA CONDICIÓN MÉDICA</button>
+    <button>SELECCIONAR MÉDICO</button>
+  </nav>
+
+  <div class="main-container">
+    <section class="form-wrapper">
+      <h2>INGRESAR DESCRIPCIÓN MÉDICA</h2>
+      <form class="appointment-form">
+        <div class="form-section">
+          <div class="form-column">
+            <div class="form-row">
+              <label>PACIENTE:
+                <input type="text" placeholder="Nombre del paciente">
+              </label>
+              <label>CÓDIGO:
+                <input type="text" placeholder="Código del paciente">
+              </label>
+            </div>
+            
+            <div class="form-row">
+              <label>TELÉFONO:
+                <input type="tel" placeholder="Número de teléfono">
+              </label>
+              <label>DIRECCIÓN:
+                <input type="text" placeholder="Dirección del paciente">
+              </label>
+            </div>
+            
+            <div class="form-row">
+              <label>TUTOR/APODERADO:
+                <input type="text" placeholder="Nombre del tutor">
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-column">
+            <div class="form-row">
+              <label>EDAD:
+                <input type="text" placeholder="Edad del paciente">
+              </label>
+              <label>MODALIDAD:
+                <select>
+                  <option>Provincial</option>
+                  <option>Revista</option>
+                </select>
+              </label>
+            </div>
+            
+            <div class="form-row">
+              <label>TIPO DE SEGURO:
+                <input type="text" placeholder="Tipo de seguro">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="medical-description">
+          <h3>INDICACIÓN MÉDICA</h3>
+          <textarea placeholder="Describa la condición médica del paciente"></textarea>
+          
+          <div class="severity-section">
+            <div class="severity-option">
+              <label>GRAVEDAD:</label>
+              <div class="radio-group">
+                <label><input type="radio" name="gravedad"> Leve</label>
+                <label><input type="radio" name="gravedad"> Moderado</label>
+                <label><input type="radio" name="gravedad"> Grave</label>
+              </div>
+            </div>
+            
+            <div class="severity-option">
+              <label>PERSISTENCIA:</label>
+              <div class="radio-group">
+                <label><input type="radio" name="persistencia"> Corta</label>
+                <label><input type="radio" name="persistencia"> Media</label>
+                <label><input type="radio" name="persistencia"> Larga</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="confirmation-section">
+          <label>
+            <input type="checkbox" /> He revisado y confirmo los datos de mi cita.
+          </label>
+          
+          <div class="form-buttons">
+            <button type="button" class="btn-continue">CONTINUAR</button>
+            <button type="reset" class="btn-clean">LIMPIAR</button>
+            <button type="button" class="btn-cancel">CANCELAR</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
