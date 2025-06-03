@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+.top-header {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.top-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+.top-nav {
+  background-color: #008B8B;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.top-nav button {
+  background-color: #006666;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.top-nav button:hover {
+  background-color: #004d4d;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #87CEEB;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.appointment-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.form-left, .form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-left label, .form-right label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-left input, .form-right input, 
+.form-left textarea, .form-right select {
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-left textarea {
+  min-height: 80px;
+  resize: vertical;
+  border-radius: 15px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.radio-group label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+}
+
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.form-footer label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.buttons button:hover {
+  opacity: 0.8;
+}
+
+.continue {
+  background-color: #28a745;
+  color: white;
+}
+
+.clean {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.continue:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
