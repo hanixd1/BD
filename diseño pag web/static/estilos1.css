@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #e6f7fc;
+  }
+  
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+.top-header {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 300px; /* Espacio entre logo y título */
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Nuevo menú principal */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #009bbf;
+  padding: 12px 0;
+  gap: 0;
+}
+
+.nav-button {
+  background-color: #009bbf;
+  color: white;
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  flex: 1;
+  max-width: 240px;
+}
+
+.nav-button:hover {
+  background-color: #017c9e;
+}
+
+.nav-button:last-child {
+  border-right: none;
+}
+
+/* Menú secundario (el que ya existía) */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #009bbf;
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.top-nav button {
+  background-color: #017c9e;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+  
+  .main-container {
+    display: flex;
+    margin: 20px;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #009bbf;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .sidebar button {
+    background-color: #017c9e;
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .form-wrapper {
+    background-color: #a2ecff;
+    padding: 30px;
+    flex: 1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .appointment-form {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .form-left,
+  .form-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-footer {
+    background-color: #d9f8ff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .form-footer label {
+    margin-left: 10px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  button.continue {
+    background-color: #1abc9c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button.clean {
+    background-color: #bdc3c7;
+    color: black;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button.cancel {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-wrap: wrap;
+  }
+  
+  .nav-button {
+    min-width: 200px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .nav-button:last-child {
+    border-bottom: none;
+  }
+  
+  .top-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .top-nav button {
+    min-width: 200px;
+  }
+}

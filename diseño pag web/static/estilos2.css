@@ -1,0 +1,426 @@
+
+/* Reset y configuración base */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Espacio entre logo y título */
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: Arial;
+}
+
+/* Barra de navegación superior (módulos principales) */
+.main-nav {
+  background: #009bbf;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-nav-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  min-width: 180px;
+}
+
+.main-nav-btn:last-child {
+  border-right: none;
+}
+
+.main-nav-btn:hover:not(.blocked) { 
+  background: rgba(255,255,255,0.1); 
+}
+
+.main-nav-btn.active {
+  background: #009bbf;
+}
+
+.main-nav-btn.blocked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #009bbf;
+}
+
+/* Barra de navegación secundaria (pasos del proceso) */
+.nav-bar {
+  background: #009bbf;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: #009bbf;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover, 
+.nav-btn.active { 
+  background: #004d4d; 
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1940px;
+  margin: 20px auto;
+  background: #a2ecff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Layout del formulario */
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.left-section, 
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Grupos de input */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input-group input, 
+.input-group textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.input-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Opciones */
+.option-group h4 {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.option-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  padding: 8px 16px;
+  border: 2px solid #006666;
+  background: white;
+  color: #006666;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.option-btn:hover { 
+  background: #f0f8ff; 
+}
+
+.option-btn.selected {
+  background: #006666;
+  color: white;
+}
+
+/* Tarjetas */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sección de fecha */
+.date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.date-label { 
+  font-weight: bold; 
+  font-size: 14px; 
+}
+
+/* Switch toggle */
+.toggle-switch {
+  width: 50px;
+  height: 24px;
+  background: #ccc;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle-switch.active {
+  background: #006666;
+}
+
+.toggle-switch.active::before {
+  transform: translateX(26px);
+}
+
+/* Calendario */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-arrow:hover { 
+  background: #f0f0f0; 
+}
+
+.month-year {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.calendar-day-header {
+  font-weight: bold;
+  padding: 8px 4px;
+  color: #666;
+  font-size: 12px;
+}
+
+.calendar-day {
+  padding: 8px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.calendar-day:hover:not(.other-month) { 
+  background: #f0f8ff; 
+}
+
+.calendar-day.selected {
+  background: #006666;
+  color: white;
+}
+
+.calendar-day.other-month {
+  color: #ccc;
+  cursor: default;
+}
+
+.calendar-day.today {
+  background: #e6f3ff;
+  font-weight: bold;
+}
+
+/* Checkbox de confirmación */
+.confirmation-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #006666;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.checkbox-custom.checked {
+  background: #006666;
+}
+
+.checkbox-custom.checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: -2px;
+  left: 2px;
+}
+
+/* Información del paciente */
+.patient-info {
+  text-align: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.btn:hover { 
+  opacity: 0.8; 
+}
+
+.btn-continue { 
+  background: #28a745; 
+  color: white; 
+}
+
+.btn-clean { 
+  background: #ffc107; 
+  color: #333; 
+}
+
+.btn-cancel { 
+  background: #dc3545; 
+  color: white; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-layout { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+  
+  .container { 
+    margin: 10px; 
+    padding: 20px; 
+  }
+  
+  .nav-bar { 
+    gap: 10px; 
+  }
+  
+  .nav-btn { 
+    font-size: 12px; 
+    padding: 10px 15px; 
+  }
+
+  .main-nav-btn {
+    min-width: 120px;
+    font-size: 10px;
+    padding: 12px 15px;
+  }
+}

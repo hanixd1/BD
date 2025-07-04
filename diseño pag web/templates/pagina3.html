@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asignación de Médico</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos3.css') }}">
+</head>
+<body>
+  <header class="top-header">
+    <div class="header-content">
+      <img src="{{ url_for('static', filename='andesalud.png') }}" alt="Logo" class="logo">
+      <h1>SISTEMA DE GESTIÓN DE SALUD RURAL</h1>
+    </div>
+  </header>
+
+  <!-- Cuadros de gestión movidos aquí -->
+  <div class="management-container">
+    <div class="management-boxes">
+      <div class="box" id="gestion-citas">GESTIÓN DE CITAS MÉDICAS</div>
+      <div class="box blocked" id="gestion-pacientes">GESTIÓN DE PACIENTES</div>
+      <div class="box blocked" id="gestion-medicos">GESTIÓN MÉDICOS</div>
+      <div class="box blocked" id="gestion-programadas">GESTIÓN DE CITAS PROGRAMADAS</div>
+      <div class="box blocked" id="gestion-ia">GESTIÓN DE IA/ML</div>
+    </div>
+  </div>
+
+  <nav class="top-nav">
+    <button onclick="window.location.href='/'">AGENDAR CITA</button>
+    <button onclick="window.location.href='/pagina2'">INGRESAR DESCRIPCIÓN DE LA CONDICIÓN MÉDICA</button>
+    <button class="active">SELECCIONAR MÉDICO</button>
+  </nav>
+
+  <div class="main-container">
+    <section class="form-wrapper">
+      <h2>ASIGNACIÓN DE MÉDICO</h2>
+      
+      <form id="medicoForm" action="/procesar_medico" method="POST">
+        <!-- Sección de especialidades movida arriba -->
+        <div class="specialties-section">
+          <h3>ESPECIALIDADES</h3>
+          <div class="specialties-list">
+            <span data-especialidad="medicina_general">Medicina general</span>
+            <span data-especialidad="pediatria">Pediatría</span>
+            <span data-especialidad="ginecologia">Ginecología</span>
+            <span data-especialidad="medicina_interna">Medicina Interna</span>
+            <span data-especialidad="dermatologia">Dermatología</span>
+            <span data-especialidad="obstetricia">Obstetricia</span>
+            <span data-especialidad="odontologia">Odontología</span>
+            <span data-especialidad="psicologia">Psicología</span>
+            <span data-especialidad="traumatologia">Traumatología</span>
+            <span data-especialidad="oftalmologia">Oftalmología</span>
+          </div>
+          <input type="hidden" id="especialidad_seleccionada" name="especialidad_seleccionada">
+        </div>
+
+        <div class="assignment-container">
+          <div class="doctors-section">
+            <h3>LISTA DE MÉDICOS</h3>
+            <div class="doctors-list">
+              <div class="doctor-card" data-doctor="carlos_marrique" data-especialidad="medicina_general">
+                Carlos Marrique - Medicina General
+              </div>
+              <div class="doctor-card" data-doctor="estefanie_gomez" data-especialidad="pediatria">
+                Estefanie Gomez - Pediatría
+              </div>
+              <div class="doctor-card" data-doctor="manolo_tiza" data-especialidad="ginecologia">
+                Manolo Tiza - Ginecología
+              </div>
+              <div class="doctor-card" data-doctor="ruben_alcantara" data-especialidad="medicina_interna">
+                Ruben Alcantara - Medicina Interna
+              </div>
+              <div class="doctor-card" data-doctor="brayan_smit" data-especialidad="dermatologia">
+                Brayan Smit - Dermatología
+              </div>
+              <div class="doctor-card" data-doctor="piero_enrique" data-especialidad="obstetricia">
+                Piero Enrique - Obstetricia
+              </div>
+              <div class="doctor-card" data-doctor="cristhian_cardenaz" data-especialidad="odontologia">
+                Cristhian Cardenaz - Odontología
+              </div>
+              <div class="doctor-card" data-doctor="renzo_flores" data-especialidad="psicologia">
+                Renzo Flores - Psicología
+              </div>
+              <div class="doctor-card" data-doctor="matias_sanchez" data-especialidad="traumatologia">
+                Matias Sanchez - Traumatología
+              </div>
+              <div class="doctor-card" data-doctor="david_gongora" data-especialidad="oftalmologia">
+                David Gongora - Oftalmología
+              </div>
+              <div class="doctor-card" data-doctor="malena_garcia" data-especialidad="medicina_general">
+                Malena Garcia - Medicina General
+              </div>
+            </div>
+            <input type="hidden" id="medico_seleccionado" name="medico_seleccionado" required>
+          </div>
+
+          <div class="schedule-section">
+            <h3>HORARIO DISPONIBLE</h3>
+            <div class="month-header">Agosto 2025</div>
+            <div class="calendar-weekdays">
+              <span>D</span>
+              <span>L</span>
+              <span>M</span>
+              <span>M</span>
+              <span>J</span>
+              <span>V</span>
+              <span>S</span>
+            </div>
+            <div class="calendar-days" id="calendar-days">
+              <!-- Las fechas se generarán dinámicamente según el médico seleccionado -->
+            </div>
+            <input type="hidden" id="fecha_seleccionada" name="fecha_seleccionada" required>
+          </div>
+
+          <div class="time-section">
+            <h3>SELECCIONAR HORA</h3>
+            <div class="time-inputs">
+              <div class="time-input">
+                <label>Hora</label>
+                <select name="hora" id="hora" required>
+                  <option value="">--</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                </select>
+              </div>
+              <div class="time-input">
+                <label>Minutos</label>
+                <select name="minutos" id="minutos" required>
+                  <option value="">--</option>
+                  <option value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <span>Identificación: <strong>0000CT1</strong></span>
+          <span>N° cita: <strong>0000015</strong></span>
+        </div>
+
+        <div id="alertas"></div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-confirm">CONFIRMAR CITA</button>
+          <button type="button" class="btn-limpiar" onclick="limpiarFormulario()">LIMPIAR</button>
+          <button type="button" class="btn-back" onclick="window.location.href='/pagina2'">RETROCEDER</button> 
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='script3.js') }}"></script>
+</body>
+</html>
